@@ -16,42 +16,42 @@ const canciones = [
 
 {
 casilla: 1,
-video: "https://www.youtube.com/embed/VIDEO_ID_1"
+video: ""https://youtu.be/dQw4w9WgXcQ?si=bQ1-GhJexKrmhiHx
 },
 
 {
 casilla: 2,
-video: "https://www.youtube.com/embed/VIDEO_ID_2"
+video: "https://youtu.be/dQw4w9WgXcQ?si=bQ1-GhJexKrmhiHx"
 },
 
 {
 casilla: 3,
-video: "https://www.youtube.com/embed/VIDEO_ID_3"
+video: "https://youtu.be/dQw4w9WgXcQ?si=bQ1-GhJexKrmhiHx"
 },
 
 {
 casilla: 4,
-video: "https://www.youtube.com/embed/VIDEO_ID_4"
+video: "https://youtu.be/dQw4w9WgXcQ?si=bQ1-GhJexKrmhiHx"
 },
 
 {
 casilla: 5,
-video: "https://www.youtube.com/embed/VIDEO_ID_5"
+video: "https://youtu.be/dQw4w9WgXcQ?si=bQ1-GhJexKrmhiHx"
 },
 
 {
 casilla: 6,
-video: "https://www.youtube.com/embed/VIDEO_ID_6"
+video: "https://youtu.be/dQw4w9WgXcQ?si=bQ1-GhJexKrmhiHx"
 },
 
 {
 casilla: 7,
-video: "https://www.youtube.com/embed/VIDEO_ID_7"
+video: "https://youtu.be/dQw4w9WgXcQ?si=bQ1-GhJexKrmhiHx"
 },
 
 {
 casilla: 8,
-video: "https://www.youtube.com/embed/VIDEO_ID_8"
+video: "https://youtu.be/dQw4w9WgXcQ?si=bQ1-GhJexKrmhiHx"
 }
 
 ];
