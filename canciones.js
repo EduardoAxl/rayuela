@@ -13,47 +13,14 @@ escucha la tuya completa.
 */
 
 const canciones = [
-
-{
-casilla: 1,
-video: "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&rel=0"
-},
-
-{
-casilla: 2,
-video: "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&rel=0"
-},
-
-{
-casilla: 3,
-video: "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&rel=0"
-},
-
-{
-casilla: 4,
-video: "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&rel=0"
-},
-
-{
-casilla: 5,
-video: "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&rel=0"
-},
-
-{
-casilla: 6,
-video: "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&rel=0"
-},
-
-{
-casilla: 7,
-video: "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&rel=0"
-},
-
-{
-casilla: 8,
-video: "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&rel=0"
-}
-
+  { casilla: 1, video: "https://www.youtube.com/embed/_dKed8cVDf8" },
+  { casilla: 2, video: "https://www.youtube.com/embed/uOvbKjHrt5Y" },
+  { casilla: 3, video: "https://www.youtube.com/embed/YHesAHfWAG0" },
+  { casilla: 4, video: "https://www.youtube.com/embed/huiNVHguyoU" },
+  { casilla: 5, video: "https://www.youtube.com/embed/8NTuJZe7z5U" },
+  { casilla: 6, video: "https://www.youtube.com/embed/RORBpg5AIN4" },
+  { casilla: 7, video: "https://www.youtube.com/embed/-Iv3QCj78-g" },
+  { casilla: 8, video: "https://www.youtube.com/embed/n5HTKXWm4gY" }
 ];
 
 /*
