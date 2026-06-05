@@ -30,6 +30,12 @@ body{
     max-width:500px;
     border-radius:12px;
     margin-bottom:20px;
+    transition:0.5s ease;
+}
+
+.fade-out{
+    opacity:0;
+    transform:scale(0.95);
 }
 
 h1{
@@ -119,11 +125,6 @@ iframe{
     transform:scale(1.1);
 }
 
-.vacio{
-    width:80px;
-    height:80px;
-}
-
 </style>
 </head>
 
@@ -204,16 +205,6 @@ allowfullscreen>
 `;
 }
 
-function mostrarFin(){
-
-document.getElementById("contenido").innerHTML = `
-<div class="final-message">
-    <h2>La rayuela ya fue jugada.</h2>
-    <p>Solo se vive una vez esta historia.</p>
-</div>
-`;
-}
-
 function elegirCancion(){
 
 if (!window.canciones || canciones.length === 0) {
@@ -224,6 +215,14 @@ if (!window.canciones || canciones.length === 0) {
     `;
     return;
 }
+
+// 👇 animación + ocultar portada
+const cover = document.querySelector(".cover");
+cover.classList.add("fade-out");
+
+setTimeout(() => {
+    cover.style.display = "none";
+}, 500);
 
 const guardada = localStorage.getItem("rayuela_cancion");
 
@@ -244,7 +243,8 @@ window.onload = () => {
 const guardada = localStorage.getItem("rayuela_cancion");
 
 if(guardada){
-    mostrarFin();
+    document.querySelector(".cover").style.display = "none";
+    mostrarCancion(guardada);
 }
 
 };
