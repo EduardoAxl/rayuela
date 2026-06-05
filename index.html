@@ -72,29 +72,42 @@ iframe{
 /* RAYUELA */
 
 .rayuela{
-    display:grid;
-    grid-template-columns:80px 80px;
-    gap:10px;
-    justify-content:center;
     margin:40px auto;
+    max-width:220px;
+}
+
+.fila{
+    display:flex;
+    margin-bottom:12px;
+}
+
+.fila.centro{
+    justify-content:center;
+}
+
+.fila.doble{
+    justify-content:center;
+    gap:12px;
 }
 
 .casilla-ui{
     width:80px;
     height:80px;
     border:2px solid rgba(255,255,255,.2);
-    border-radius:12px;
+    border-radius:16px;
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:24px;
-    opacity:.6;
+    font-size:28px;
+    color:rgba(255,255,255,.8);
+    transition:.3s;
 }
 
 .casilla-activa{
     border-color:#fff;
-    opacity:1;
-    box-shadow:0 0 20px rgba(255,255,255,.5);
+    color:#fff;
+    box-shadow:0 0 25px rgba(255,255,255,.5);
+    transform:scale(1.05);
 }
 
 .vacio{
@@ -140,40 +153,30 @@ return `
 
 <div class="rayuela">
 
-    <div class="vacio"></div>
-    <div class="casilla-ui ${casillaActiva===8 ? 'casilla-activa' : ''}">
-        8
+    <div class="fila centro">
+        <div class="casilla-ui ${casillaActiva===8 ? 'casilla-activa' : ''}">8</div>
     </div>
 
-    <div class="casilla-ui ${casillaActiva===6 ? 'casilla-activa' : ''}">
-        6
+    <div class="fila doble">
+        <div class="casilla-ui ${casillaActiva===6 ? 'casilla-activa' : ''}">6</div>
+        <div class="casilla-ui ${casillaActiva===7 ? 'casilla-activa' : ''}">7</div>
     </div>
 
-    <div class="casilla-ui ${casillaActiva===7 ? 'casilla-activa' : ''}">
-        7
+    <div class="fila centro">
+        <div class="casilla-ui ${casillaActiva===5 ? 'casilla-activa' : ''}">5</div>
     </div>
 
-    <div class="vacio"></div>
-    <div class="casilla-ui ${casillaActiva===5 ? 'casilla-activa' : ''}">
-        5
+    <div class="fila doble">
+        <div class="casilla-ui ${casillaActiva===3 ? 'casilla-activa' : ''}">3</div>
+        <div class="casilla-ui ${casillaActiva===4 ? 'casilla-activa' : ''}">4</div>
     </div>
 
-    <div class="casilla-ui ${casillaActiva===3 ? 'casilla-activa' : ''}">
-        3
+    <div class="fila centro">
+        <div class="casilla-ui ${casillaActiva===2 ? 'casilla-activa' : ''}">2</div>
     </div>
 
-    <div class="casilla-ui ${casillaActiva===4 ? 'casilla-activa' : ''}">
-        4
-    </div>
-
-    <div class="vacio"></div>
-    <div class="casilla-ui ${casillaActiva===2 ? 'casilla-activa' : ''}">
-        2
-    </div>
-
-    <div class="vacio"></div>
-    <div class="casilla-ui ${casillaActiva===1 ? 'casilla-activa' : ''}">
-        1
+    <div class="fila centro">
+        <div class="casilla-ui ${casillaActiva===1 ? 'casilla-activa' : ''}">1</div>
     </div>
 
 </div>
@@ -181,7 +184,7 @@ return `
 `;
 
 }
-
+    
 function mostrarCancion(cancion){
 
 document.getElementById("contenido").innerHTML = `
