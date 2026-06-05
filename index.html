@@ -1,13 +1,18 @@
-<!DOCTYPE html><html lang="es">
+<!DOCTYPE html>
+<html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Rayuela: Érase una vez... en los '10</title><style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Rayuela: Érase una vez... en los '10</title>
+
+<style>
 
 body{
     margin:0;
-    background:#111;
-    color:white;
-    font-family:Arial, sans-serif;
+    background:#000;
+    color:#fff;
+    font-family:Arial,sans-serif;
     text-align:center;
 }
 
@@ -21,49 +26,39 @@ body{
     width:100%;
     max-width:500px;
     border-radius:12px;
-    box-shadow:0 0 25px rgba(255,255,255,.1);
+    margin-bottom:20px;
 }
 
 h1{
-    margin-top:20px;
-    margin-bottom:5px;
-    font-size:2.8rem;
+    font-size:4rem;
+    margin:0;
 }
 
 .subtitle{
+    font-size:1.2rem;
     opacity:.7;
-    margin-bottom:30px;
+    margin:10px 0 40px;
 }
 
 button{
+    background:#fff;
+    color:#000;
+    border:none;
+    border-radius:10px;
     padding:15px 30px;
     font-size:18px;
-    border:none;
-    border-radius:8px;
     cursor:pointer;
 }
 
-.rayuela{
-    margin:30px auto;
-    width:120px;
+.mensaje{
+    margin:30px 0;
+    font-size:1.4rem;
+    opacity:.85;
 }
 
-.casilla-ui{
-    width:60px;
-    height:60px;
-    border:2px solid rgba(255,255,255,.3);
-    margin:6px auto;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:8px;
-    opacity:.6;
-}
-
-.casilla-activa{
-    border-color:white;
-    opacity:1;
-    box-shadow:0 0 15px rgba(255,255,255,.4);
+.final-message{
+    margin-top:40px;
+    font-size:1.4rem;
 }
 
 iframe{
@@ -71,50 +66,119 @@ iframe{
     max-width:560px;
     height:315px;
     border:none;
-    margin-top:20px;
+    border-radius:12px;
 }
 
-.mensaje{
-    margin-top:20px;
-    opacity:.8;
+/* RAYUELA */
+
+.rayuela{
+    display:grid;
+    grid-template-columns:80px 80px;
+    gap:10px;
+    justify-content:center;
+    margin:40px auto;
 }
 
-.final-message{
-    margin-top:40px;
-    opacity:.8;
+.casilla-ui{
+    width:80px;
+    height:80px;
+    border:2px solid rgba(255,255,255,.2);
+    border-radius:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:24px;
+    opacity:.6;
 }
 
-</style></head><body><div class="container"><img
+.casilla-activa{
+    border-color:#fff;
+    opacity:1;
+    box-shadow:0 0 20px rgba(255,255,255,.5);
+}
+
+.vacio{
+    width:80px;
+    height:80px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<img
 class="cover"
-src="file_000000007f6c720ebbfa9d65d93e6e65.png"
+src="rayuela-cover.jpg"
 alt="Rayuela">
 
-<h1>Rayuela</h1><div class="subtitle">
+<h1>Rayuela</h1>
+
+<div class="subtitle">
 Érase una vez... en los '10
-</div><div id="contenido"><button onclick="elegirCancion()">
+</div>
+
+<div id="contenido">
+
+<button onclick="elegirCancion()">
 ✨ Saltar la rayuela
-</button></div></div><script src="canciones.js"></script><script>
+</button>
+
+</div>
+
+</div>
+
+<script src="canciones.js"></script>
+
+<script>
 
 function generarRayuela(casillaActiva){
 
-let html = '<div class="rayuela">';
+return `
 
-for(let i=1;i<=8;i++){
+<div class="rayuela">
 
-html += `
-<div class="
-casilla-ui
-${i===casillaActiva ? 'casilla-activa' : ''}
-">
-${i}
+    <div class="vacio"></div>
+    <div class="casilla-ui ${casillaActiva===8 ? 'casilla-activa' : ''}">
+        8
+    </div>
+
+    <div class="casilla-ui ${casillaActiva===6 ? 'casilla-activa' : ''}">
+        6
+    </div>
+
+    <div class="casilla-ui ${casillaActiva===7 ? 'casilla-activa' : ''}">
+        7
+    </div>
+
+    <div class="vacio"></div>
+    <div class="casilla-ui ${casillaActiva===5 ? 'casilla-activa' : ''}">
+        5
+    </div>
+
+    <div class="casilla-ui ${casillaActiva===3 ? 'casilla-activa' : ''}">
+        3
+    </div>
+
+    <div class="casilla-ui ${casillaActiva===4 ? 'casilla-activa' : ''}">
+        4
+    </div>
+
+    <div class="vacio"></div>
+    <div class="casilla-ui ${casillaActiva===2 ? 'casilla-activa' : ''}">
+        2
+    </div>
+
+    <div class="vacio"></div>
+    <div class="casilla-ui ${casillaActiva===1 ? 'casilla-activa' : ''}">
+        1
+    </div>
+
 </div>
+
 `;
-
-}
-
-html += '</div>';
-
-return html;
 
 }
 
@@ -142,7 +206,7 @@ function mostrarFin(){
 document.getElementById("contenido").innerHTML = `
 
 <div class="final-message">
-<h2>La rayuela ya fue jugada.</h2>
+    <h2>La rayuela ya fue jugada.</h2>
 </div>
 
 `;
@@ -186,10 +250,12 @@ const guardada =
 localStorage.getItem("rayuela_cancion");
 
 if(guardada){
-mostrarFin();
+    mostrarFin();
 }
 
 };
 
-</script></body>
+</script>
+
+</body>
 </html>
